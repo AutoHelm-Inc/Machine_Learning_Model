@@ -1,0 +1,22 @@
+
+SwitchWindow "Home"
+FileCreate "C:/Users/zaidl/Desktop/auto_test.txt"
+Run "C:/Users/zaidl/Desktop/auto_test.txt"
+Sleep 2500
+For (5){
+    WriteLine "Hello {i}"
+    PressKey "Z"
+}
+Write "End"
+Sleep 2000
+Save 
+Sleep 1000
+Close 
+DirCreate "C:/Users/zaidl/Desktop/test_folder"
+Move "C:/Users/zaidl/Desktop/auto_test.txt", "C:/Users/zaidl/Desktop/test_folder/auto_test.txt"
+Del "C:/Users/zaidl/Desktop/file_to_delete.txt"
+MouseMove 0, 0
+Run "mspaint.exe"
+Sleep 200
+MouseToWord "File", "True"
+Click 
