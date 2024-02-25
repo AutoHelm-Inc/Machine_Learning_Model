@@ -1,172 +1,22 @@
-{"prompt": "What is AHIL?", "completion": "AHIL is a programming language that runs exclusively on computers running on the Windows 10 and Windows 11 operating systems. AHIL is an 
-acronym that stands for Auto Helm Intermediate Language. It is a simple language that is used for basic automation tasks. It is a programming language where all code
- is run sequentially. AHIL programs are commonly referred to as workflows, writting a workflow means to write a program using AHIL code"}
-
-{"prompt": "How does AHIL work semantically? What does the basic langiage structure look like?", "completion": "There are NO user-defined functions, classes, objects, 
-if statements, or variables. AHIL code is used in order to complete simple tasks, often interacting with the Windows GUI, and making some API calls handling tasks behind the scenes. Each line of code represents a 
-differnt function call, from the pre-defined syntax. Only the pre-defined functions from the syntax described can be used. Users have control over the parameters used 
-with the functions provided by AHIL. There are no comments in AHIL code, so no in-code explanations/comments are ever made. All keywords and function names begin with 
-capital letters. Each new function is seperated by a new line. A function parameter is seperated from a function keyowrd by a single space. In the case of multiple 
-parameters being provided to a function, each parameter value after the first parameter will be seperated by a comma and space. For functions that specify they require
-coordinates as part of their parameters, The assumption is that coordinate (0,0) represents the top left of the screen, and the x and y values increase rightwrds and 
-downwards. There are no negative numbers for these coordinates. "}
-
-{"prompt": "in AHIL, SwitchWindow is a function which will switch which window is currently active. It will switch to an open application window with the title that is 
-specified. The parameter to this function will be the open application window name, in double quotes. for example: SwitchWindow \"Window name to switch to\"", 
-"completion": "SwitchWindow \"Home\""}
-
-{"prompt": "in AHIL, FileCreate is a function which will create a file at the location passed in. The parameter for this function is a full Windows file path, 
-including the new file's name and extension at the end of it. the path must use the forward slash (/) between folders. The parameter to this function will be the full
- path, in double quotes. for example: FileCreate \"C:/the/full/file/path/with/folders/and/file_name.extension\"", 
- "completion": "FileCreate \"C:/Users/zaidl/Desktop/auto_test.txt\""}
-
-{"prompt": "in AHIL, Run is a function that will open a .exe application, or a file on one's computer with the default application for that file's extension. The 
-function's paramerter will either be the name of the application's exe file (with the .exe extension), or the full Windows path to a file on one's computer (this can
-be a .exe file in a specific location, or any other file type). The parameter must be wrapped in double quotes. 
-for example: Run \"C:/the/full/file/peath/with/folders/and/file_name.extension\"." , "completion": "Run \"mspaint.exe\""}
-
-{"prompt": "in AHIL, Sleep is a function that will pause exection for a specified amount of time, in milliseconds. The one parameter will be an interger value 
-representing the amount of time to sleep for, in mullisections. This is a good function to use after other functions that take longer to complete such as opening 
-applications/files, or writing text, in order to ensure that things have loaded properly before moving on to the next line in the code. 
-for example: Sleep 2000", "completion": "Sleep 500"}
-
-{"prompt": "in AHIL, Write is a function that will type out a string with the keyboard. The string it will type is the parameter passed into this funtion, which is 
-any string wrapped in double quotes.", "completion": "Write \"This is a sample sentence that is typed out on screen.\""}
-
-{"prompt": "in AHIL, WriteLine is a function that will type out a string with the keyboard, and automatically add a new line ending by hitting the enter key. The string 
-it will type is the parameter passed into this funtion, which is any string wrapped in double quotes.", 
-"completion": "WriteLine \"This is a sample line that is typed out on screen.\""}
-
-{"prompt": "in AHIL, Del is a function that will delete a file or folder given a specified path. There is 1 mandatory parameter to this funtion, which is the path of
- the file or folder being deleted, and it is a mandatory parameter", "completion": "Del \"D:/videos/games/old_clip.mp4\""}
-
-{"prompt": "in AHIL, PressKey is a function that will click one individual key on the keyboard. It takes in a parameter of the key to press, wrapped in double quotes.
-It also supports clicking functional keys with the use of modifiers. Modifier rules are summarized as follows: modifiers for different keys and actions. The exclamation 
-mark (!) is used for the Alt key, with {Alt} representing the Alt key, {Alt Down} for pressing it down, and {Alt Up} for releasing it. The plus sign (+) is associated 
-with the Shift key, and the syntax includes {Shift}, {Shift Down}, and {Shift Up} for Shift key events. The caret (^) signifies the Ctrl key, with options like {Ctrl},
- {Ctrl Down}, and {Ctrl Up} for Ctrl key actions. The hash (#) is used for the Windows key, and options include {LWin}, {RWin}, {LWin Down}, and {RWin Down} for 
- Windows key events. Braces ({ }) enclose key names and other options, and are used for sending special characters literally. Additionally, there are representations 
- for function keys ({F1} - {F24}), state keys (CapsLock, ScrollLock, NumLock), control keys (Control, Alt, Shift), mouse events, numpad keys, browser navigation keys, 
- media and launch keys, special keys, and modifiers for key remapping such as {Blind} and {Raw} for literal interpretation.", 
-"completion": "PressKey \"8\""}
-
-{"prompt": "in AHIL, Close is a function that will close an application window that the user currently has opened on their computer. There is one optional prameter to
-this funciton, which is the name of the application window to close. This name must be the open window's name, this is a string that must be wrapped in double quotes.
-If no parameter is passed to the function, the function will close the currently opened and active application window.", "completion": "Close \"Untitled\""}
-
-{"prompt": "in AHIL, DirCreate is a function that will create a new folder/directory at the specified location. There is 1 mandatory parameter to use this function
-which is the path location of the new directory, and it must end with the name of the new folder as well. This makes the path parameter as a combination of both the 
-location of the new folder, and the new folder name... a format like so: \"Drive/existing/directory/location/of/folders/NEW_FOLDER_NAME\"", 
-"completion": "DirCreate \"C:/Users/jarif/Documents/work_files/january_contracts_folder\""}
-
-{"prompt": "in AHIL, Save is a function that will attempt to save the current file opened. It will do this by simulating the Ctrl+S keybind on one's computer. Usage 
-for this is meant for when a file is open in some sort of application that allows one to edit it, and then can save one's work after changes are made.", 
-"completion": "Save"}
-
-{"prompt": "in AHIL, Move is a function that will take a file at it's current location, and move it to a new location. It does this by taking 2 madatory path parameters.
-The first parameter rerpresents a path of a file that currently exists in the user's file system. The second parameter is the path of the file's new location. Both of
- these path parameters must be the full path, including the name of the file to be moved with the extension at the end. This function can also be used to rename a file,
- simply by changing the name of the file in the second parameter at the end (a differnt one from what was originally passed). When the file names are kept the same in 
- both parameters, it will just execute a simple move. If they are different, it will move the file to the new location and change the name. Changing file names with
- this function can also allow a user to change the file type, simply by changing the file extension at the end of the second path.", 
- "completion": "Move \"C:/Users/Alex/Documents/data_1.txt\", \"C:/Users/Alex/Desktop/data_1.txt\""}
-
- {"prompt": "in AHIL, MouseToWord is a function that will move the mouse to a the location of the specified word/set of words. It will read all words that are 
- currently shown on the screen, and move the mouse above it. There are 2 parameters passed into this function, the word needed (which is a string wrapped in double 
- quotes) and an isDark parameter. The parameter of the word (or set of words) passed in is mandatory for this function, it describes what to look for in order to move
- the mouse. The second parameter, isDark, is an optional parameter, as it defaults to \"True\". It takes in a boolean value (\"True\" or \"False\", starting with 
- capital letters), that MUST be wrapped in double quotes. This parameter represents if the application in which the user is trying to use this function, is in light
- mode or dark mode. This is required in order to help the back-end code powering the MouseToWord function to interpret text on the screen more clearly.", 
- "completion": ""}
- 
- {"prompt": "in AHIL, MouseMove is a function that will move a user's mouse cursor on the screen to a specifed location. The function takes in 2 mandatory prameters, 
- an x coordinate and y coordiante. These coordianates represent where to move the mouse to.", "completion": "MouseMove 748, 1000"}
-
-{"prompt": "in AHIL, Click is a function that will simulate a left click from the mouse. There is a set of optional parameters, which represent x and y coordinates.
-These parameters are integer values, and they represent the x and y location of the mouse cursor on screen. Ths function can also take in no parmaeters, in which case it 
-will execute a left click at whatever the current position of the mouse cursor is. If coordinates are to be specified, both the x and y coordinates must be specfied, 
-not just one.", "completion": "Click 100, 200"}
-
-{"prompt": "in AHIL, For is a keyword. This represents a For loop, which works in the same manner as any other programming language. A for loop will be wrapped around
-a list of statements that are then repeated a specified number of times. The parameter for a For loop is an integer, that represents the number of times the statements 
-within the for loop are repeated. There must be a space between the word \"For\" and the number, that is wrapped in brackets. After the number wrapped in brackets,
-there will be a set of curly braces that will hold the set of fucntions to be repeated. As is the case with other statements in AHIL, the functions wrapped in the
-for loop will be seperated by new lines. Functions within the for loop are spaced rightward with a single tab. The current index of the For loop iteration can also
-be referenced with {i}", 
-"completion": "
-For (5){
-    WriteLine \"This is the {i}st itteration of the inner loop\"
-    PressKey \"A\"
-}"}
-
-{"prompt": "Make a workflow that creates a new folder at the path C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir.
-Make a file under the new folder named output1.txt. Launch Wordpad, sleep for 500ms. Write \"hello world\" 5 times in separate lines. Save the file as output2.txt, under the
-same folder created earlier. Close wordpad. Delete the new folder.", "completion": "
-
-DirCreate \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir\"
-FileCreate \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir/output1.txt\"
-Run \"wordpad.exe\"
-Sleep 500
-For (5) {
-	WriteLine \"hello world\"
-}
-SaveAs \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir/output2.txt\"
-Close
-Del \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir\""}
-
-{"prompt": "Generate a workflow that starts by deleting this folder if it exists: 
-\"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\". Then, create the same folder again. I want to make some 
-numbered group folders inside it, like 'group_1', 'group_2', up to 'group_5'. In each group folder, create a text file named 'data_1.txt', 'data_2.txt', and so on, 
-matching the group number. For each text file, open it and write lines that have the group folder number, that number times 10, and that number times 100. It should 
-look like a list of numbers separated by commas. After writing these lines, wait a little, save everything, and close the file. ", "completion": "
-Del \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\"
-DirCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\"
-For (5){
-    DirCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}\"
-    FileCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}/data_{i}.txt\"
-    Run \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}/data_{i}.txt\"
-    For (10){
-        Sleep 1000
-        WriteLine \"{i},{i*10},{i*100}\"
-    }
-    Sleep 2000
-    Save 
-    Close
-}
-"}
-
-{"prompt": "Help me make a workflow that will Switch to the opened \"Home\" window in the file explorer. Create a text file at \"C:/Users/zaidl/Desktop/auto_test.txt\", 
-open it, and wait for 2500 milliseconds. In a loop that repeats five times, write 'Hello [the number representing what iteration this is]' and press the \"Z\" key. Afterward, write \"End\", 
-wait for 2000 milliseconds, save, and close the file \"C:/Users/zaidl/Desktop/auto_test.txt\". Create a folder at \"C:/Users/zaidl/Desktop/test_folder\", move 
-\"C:/Users/zaidl/Desktop/auto_test.txt\" into it, delete \"C:/Users/zaidl/Desktop/file_to_delete.txt\", move the mouse to coordinates (0, 0), run Microsoft Paint, wait for
- 200 milliseconds, move the mouse to the word \"File,\" (it is in dark mode) and click.", "completion": "
- 
-SwitchWindow \"Home\"
-FileCreate \"C:/Users/zaidl/Desktop/auto_test.txt\"
-Run \"C:/Users/zaidl/Desktop/auto_test.txt\"
-Sleep 2500
-For (5){
-    WriteLine \"Hello {i}\"
-    PressKey \"Z\"
-}
-Write \"End\"
-Sleep 2000
-Save 
-Sleep 1000
-Close 
-DirCreate \"C:/Users/zaidl/Desktop/test_folder\"
-Move \"C:/Users/zaidl/Desktop/auto_test.txt\", \"C:/Users/zaidl/Desktop/test_folder/auto_test.txt\"
-Del \"C:/Users/zaidl/Desktop/file_to_delete.txt\"
-MouseMove 0, 0
-Run \"mspaint.exe\"
-Sleep 200
-MouseToWord \"File\", \"True\"
-Click 
-"}
-
-{"prompt": "I'd like to rename and change the type of the file data_1.txt located at C:/Users/Documents/sample_files/tests/tests_output/group/data_1.txt to 
-data_5.csv at C:/Users/Documents/sample_files/tests/tests_output/group/data_5.csv . Then please open the newly named file", "completion": "
-
-Move \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_1.txt\", \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_5.csv\"
-Run \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_5.csv\"
-"}
+{"prompt": "What is AHIL?", "completion": "AHIL is a programming language that runs exclusively on computers running on the Windows 10 and Windows 11 operating systems. AHIL is an acronym that stands for Auto Helm Intermediate Language. It is a simple language that is used for basic automation tasks. It is a programming language where all code is run sequentially. AHIL programs are commonly referred to as workflows, writting a workflow means to write a program using AHIL code"}
+{"prompt": "How does AHIL work semantically? What does the basic langiage structure look like?", "completion": "There are NO user-defined functions, classes, objects, if statements, or variables. AHIL code is used in order to complete simple tasks, often interacting with the Windows GUI, and making some API calls handling tasks behind the scenes. Each line of code represents a differnt function call, from the pre-defined syntax. Only the pre-defined functions from the syntax described can be used. Users have control over the parameters used with the functions provided by AHIL. There are no comments in AHIL code, so no in-code explanations/comments are ever made. All keywords and function names begin with capital letters. Each new function is seperated by a new line. A function parameter is seperated from a function keyowrd by a single space. In the case of multiple parameters being provided to a function, each parameter value after the first parameter will be seperated by a comma and space. For functions that specify they require coordinates as part of their parameters, The assumption is that coordinate (0,0) represents the top left of the screen, and the x and y values increase rightwrds and downwards. There are no negative numbers for these coordinates. "}
+{"prompt": "in AHIL, SwitchWindow is a function which will switch which window is currently active. It will switch to an open application window with the title that is specified. The parameter to this function will be the open application window name, in double quotes. for example: SwitchWindow \"Window name to switch to\"", "completion": "SwitchWindow \"Home\""}
+{"prompt": "in AHIL, FileCreate is a function which will create a file at the location passed in. The parameter for this function is a full Windows file path, including the new file's name and extension at the end of it. the path must use the forward slash (/) between folders. The parameter to this function will be the full path, in double quotes. for example: FileCreate \"C:/the/full/file/path/with/folders/and/file_name.extension\"", "completion": "FileCreate \"C:/Users/zaidl/Desktop/auto_test.txt\""}
+{"prompt": "in AHIL, Run is a function that will open a .exe application, or a file on one's computer with the default application for that file's extension. The function's paramerter will either be the name of the application's exe file (with the .exe extension), or the full Windows path to a file on one's computer (this can be a .exe file in a specific location, or any other file type). The parameter must be wrapped in double quotes. for example: Run \"C:/the/full/file/peath/with/folders/and/file_name.extension\"." , "completion": "Run \"mspaint.exe\""}
+{"prompt": "in AHIL, Sleep is a function that will pause exection for a specified amount of time, in milliseconds. The one parameter will be an interger value representing the amount of time to sleep for, in mullisections. This is a good function to use after other functions that take longer to complete such as opening applications/files, or writing text, in order to ensure that things have loaded properly before moving on to the next line in the code. for example: Sleep 2000", "completion": "Sleep 500"}
+{"prompt": "in AHIL, Write is a function that will type out a string with the keyboard. The string it will type is the parameter passed into this funtion, which is any string wrapped in double quotes.", "completion": "Write \"This is a sample sentence that is typed out on screen.\""}
+{"prompt": "in AHIL, WriteLine is a function that will type out a string with the keyboard, and automatically add a new line ending by hitting the enter key. The string it will type is the parameter passed into this funtion, which is any string wrapped in double quotes.", "completion": "WriteLine \"This is a sample line that is typed out on screen.\""}
+{"prompt": "in AHIL, Del is a function that will delete a file or folder given a specified path. There is 1 mandatory parameter to this funtion, which is the path of the file or folder being deleted, and it is a mandatory parameter", "completion": "Del \"D:/videos/games/old_clip.mp4\""}
+{"prompt": "in AHIL, PressKey is a function that will click one individual key on the keyboard. It takes in a parameter of the key to press, wrapped in double quotes.It also supports clicking functional keys with the use of modifiers. Modifier rules are summarized as follows: modifiers for different keys and actions. The exclamation mark (!) is used for the Alt key, with {Alt} representing the Alt key, {Alt Down} for pressing it down, and {Alt Up} for releasing it. The plus sign (+) is associated with the Shift key, and the syntax includes {Shift}, {Shift Down}, and {Shift Up} for Shift key events. The caret (^) signifies the Ctrl key, with options like {Ctrl}, {Ctrl Down}, and {Ctrl Up} for Ctrl key actions. The hash (#) is used for the Windows key, and options include {LWin}, {RWin}, {LWin Down}, and {RWin Down} for Windows key events. Braces ({ }) enclose key names and other options, and are used for sending special characters literally. Additionally, there are representations for function keys ({F1} - {F24}), state keys (CapsLock, ScrollLock, NumLock), control keys (Control, Alt, Shift), mouse events, numpad keys, browser navigation keys, media and launch keys, special keys, and modifiers for key remapping such as {Blind} and {Raw} for literal interpretation.", "completion": "PressKey \"8\""}
+{"prompt": "in AHIL, Close is a function that will close an application window that the user currently has opened on their computer. There is one optional prameter to this funciton, which is the name of the application window to close. This name must be the open window's name, this is a string that must be wrapped in double quotes. If no parameter is passed to the function, the function will close the currently opened and active application window.", "completion": "Close \"Untitled\""}
+{"prompt": "in AHIL, DirCreate is a function that will create a new folder/directory at the specified location. There is 1 mandatory parameter to use this function which is the path location of the new directory, and it must end with the name of the new folder as well. This makes the path parameter as a combination of both the location of the new folder, and the new folder name... a format like so: \"Drive/existing/directory/location/of/folders/NEW_FOLDER_NAME\"", "completion": "DirCreate \"C:/Users/jarif/Documents/work_files/january_contracts_folder\""}
+{"prompt": "in AHIL, Save is a function that will attempt to save the current file opened. It will do this by simulating the Ctrl+S keybind on one's computer. Usage for this is meant for when a file is open in some sort of application that allows one to edit it, and then can save one's work after changes are made.", "completion": "Save"}
+{"prompt": "in AHIL, Move is a function that will take a file at it's current location, and move it to a new location. It does this by taking 2 madatory path parameters. The first parameter rerpresents a path of a file that currently exists in the user's file system. The second parameter is the path of the file's new location. Both of these path parameters must be the full path, including the name of the file to be moved with the extension at the end. This function can also be used to rename a file, simply by changing the name of the file in the second parameter at the end (a differnt one from what was originally passed). When the file names are kept the same in both parameters, it will just execute a simple move. If they are different, it will move the file to the new location and change the name. Changing file names with this function can also allow a user to change the file type, simply by changing the file extension at the end of the second path.", "completion": "Move \"C:/Users/Alex/Documents/data_1.txt\", \"C:/Users/Alex/Desktop/data_1.txt\""}
+{"prompt": "in AHIL, MouseToWord is a function that will move the mouse to a the location of the specified word/set of words. It will read all words that are currently shown on the screen, and move the mouse above it. There are 2 parameters passed into this function, the word needed (which is a string wrapped in double quotes) and an isDark parameter. The parameter of the word (or set of words) passed in is mandatory for this function, it describes what to look for in order to move the mouse. The second parameter, isDark, is an optional parameter, as it defaults to \"True\". It takes in a boolean value (\"True\" or \"False\", starting with capital letters), that MUST be wrapped in double quotes. This parameter represents if the application in which the user is trying to use this function, is in light mode or dark mode. This is required in order to help the back-end code powering the MouseToWord function to interpret text on the screen more clearly.", "completion": "MouseToWord \"Edit\", \"False\""}
+{"prompt": "in AHIL, MouseMove is a function that will move a user's mouse cursor on the screen to a specifed location. The function takes in 2 mandatory prameters, an x coordinate and y coordiante. These coordianates represent where to move the mouse to.", "completion": "MouseMove 748, 1000"}
+{"prompt": "in AHIL, Click is a function that will simulate a left click from the mouse. There is a set of optional parameters, which represent x and y coordinates. These parameters are integer values, and they represent the x and y location of the mouse cursor on screen. Ths function can also take in no parmaeters, in which case it will execute a left click at whatever the current position of the mouse cursor is. If coordinates are to be specified, both the x and y coordinates must be specfied, not just one.", "completion": "Click 100, 200"}
+{"prompt": "in AHIL, For is a keyword. This represents a For loop, which works in the same manner as any other programming language. A for loop will be wrapped around a list of statements that are then repeated a specified number of times. The parameter for a For loop is an integer, that represents the number of times the statements within the for loop are repeated. There must be a space between the word \"For\" and the number, that is wrapped in brackets. After the number wrapped in brackets, there will be a set of curly braces that will hold the set of fucntions to be repeated. As is the case with other statements in AHIL, the functions wrapped in the for loop will be seperated by new lines. Functions within the for loop are spaced rightward with a single tab. The current index of the For loop iteration can also be referenced with {i}", "completion": "For (5){\n\tWriteLine \"This is the {i}st itteration of the inner loop\"\n\tPressKey \"A\"\n}"}
+{"prompt": "Make a workflow that creates a new folder at the path C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir. Make a file under the new folder named output1.txt. Launch Wordpad, sleep for 500ms. Write \"hello world\" 5 times in separate lines. Save the file as output2.txt, under the same folder created earlier. Close wordpad. Delete the new folder.", "completion": "DirCreate \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir\"\nFileCreate \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir/output1.txt\"\nRun \"wordpad.exe\"\nSleep 500\nFor (5) {\n\tWriteLine \"hello world\"\n}\nSaveAs \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir/output2.txt\"\nClose\nDel \"C:/Users/Hans/Documents/Stuff/School/4A/ECE 498A/Automation_Framework/Automation_Project/tests/training/newdir\""}
+{"prompt": "Generate a workflow that starts by deleting this folder if it exists: \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\". Then, create the same folder again. I want to make some numbered group folders inside it, like 'group_1', 'group_2', up to 'group_5'. In each group folder, create a text file named 'data_1.txt', 'data_2.txt', and so on, matching the group number. For each text file, open it and write lines that have the group folder number, that number times 10, and that number times 100. It should look like a list of numbers separated by commas. After writing these lines, wait a little, save everything, and close the file. ", "completion": "Del \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\"\nDirCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output\"\nFor (5){\n\tDirCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}\"\n\tFileCreate \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}/data_{i}.txt\"\n\tRun \"C:/Users/James/Documents/School/Year 4/ECE 498A/Project/Desktop_Application/Project/tests/tests_output/group_{i}/data_{i}.txt\"\n\tFor (10){\n\t\tSleep 1000\n\t\tWriteLine \"{i},{i*10},{i*100}\"\n\t}\n\tSleep 2000\n\tSave \n\tClose\n}"}
+{"prompt": "Help me make a workflow that will Switch to the opened \"Home\" window in the file explorer. Create a text file at \"C:/Users/zaidl/Desktop/auto_test.txt\", open it, and wait for 2500 milliseconds. In a loop that repeats five times, write 'Hello [the number representing what iteration this is]' and press the \"Z\" key. Afterward, write \"End\", wait for 2000 milliseconds, save, and close the file \"C:/Users/zaidl/Desktop/auto_test.txt\". Create a folder at \"C:/Users/zaidl/Desktop/test_folder\", move \"C:/Users/zaidl/Desktop/auto_test.txt\" into it, delete \"C:/Users/zaidl/Desktop/file_to_delete.txt\", move the mouse to coordinates (0, 0), run Microsoft Paint, wait for 200 milliseconds, move the mouse to the word \"File,\" (it is in dark mode) and click.", "completion": "SwitchWindow \"Home\"\nFileCreate \"C:/Users/zaidl/Desktop/auto_test.txt\"\nRun \"C:/Users/zaidl/Desktop/auto_test.txt\"\nSleep 2500\nFor (5){\n\tWriteLine \"Hello {i}\"\n\tPressKey \"Z\"\n}\nWrite \"End\"\nSleep 2000\nSave \nSleep 1000\nClose \nDirCreate \"C:/Users/zaidl/Desktop/test_folder\"\nMove \"C:/Users/zaidl/Desktop/auto_test.txt\", \"C:/Users/zaidl/Desktop/test_folder/auto_test.txt\"\nDel \"C:/Users/zaidl/Desktop/file_to_delete.txt\"\nMouseMove 0, 0\nRun \"mspaint.exe\"\nSleep 200\nMouseToWord \"File\", \"True\"\nClick "}
+{"prompt": "I'd like to rename and change the type of the file data_1.txt located at C:/Users/Documents/sample_files/tests/tests_output/group/data_1.txt to data_5.csv at C:/Users/Documents/sample_files/tests/tests_output/group/data_5.csv . Then please open the newly named file", "completion": "Move \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_1.txt\", \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_5.csv\"\nRun \"C:/Users/Alex/Documents/sample_files/tests/tests_output/group/data_5.csv\""}
