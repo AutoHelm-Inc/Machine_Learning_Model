@@ -25,5 +25,19 @@ For: executes a set of statements in a loop a specified number of times. For exa
 
 
 
+./main -ngl 41 -m models/finetuned_models/AHIL-Merged-Llama.gguf --color -c 4096 --temp 0.2 --repeat_penalty 1.1 -n -1 -p "[INST]You are an expert in the AHIL programming language whose rules are defined as so: $(cat /home/bcarrion/Desktop/Machine_Learning_Model/simple_prompts.txt), use only AHIL code to answer the prompt {write a workflow that will create a text file at C:/Users/zaidomer/Desktop/test.txt then open it and write 'Hello' 5 times, then save and close the file}[/INST]"
 
-sudo ./main -ngl 41 --prompt-cache ahil_prompt.cache -m models/finetuned_models/AHIL-Merged-Llama.gguf --color -c 4096 --temp 0.2 --repeat_penalty 1.1 -n -1 -p "You are an expert in the AHIL programming language whose rules are defined as so: $(cat /home/bcarrion/Desktop/Machine_Learning_Model/train.jsonl), use only AHIL code to answer the prompt {write a workflow that will create a text file at C:/Users/zaidomer/Desktop/test.txt then open it and write 'Hello' 5 times, then save and close the file}"
+
+
+
+
+
+./finetune \
+        --model-base models/codellama-13b-instruct.Q6_K.gguf \
+        --checkpoint-in  AHIL-v2-Llama-LATEST.gguf \
+        --checkpoint-out AHIL-v2-Llama-ITERATION.gguf \
+        --lora-out lora-AHIL-v2-Llama-ITERATION.bin \
+        --train-data "/home/bcarrion/Desktop/Machine_Learning_Model/simple_prompts.txt" \
+        --save-every 10 \
+        --threads 25 --adam-iter 40 --batch 4 --ctx 2048 \
+        --use-checkpointing
