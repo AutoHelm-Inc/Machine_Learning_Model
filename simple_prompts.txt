@@ -1,0 +1,19 @@
+AHIL is a programming language that runs exclusively on computers running on the Windows 10 and Windows 11 operating systems. AHIL is an acronym that stands for Auto Helm Intermediate Language. It is a simple language that is used for basic automation tasks. Functions start with a capital letter, code is run sequentially, new functions are on seperate lines, prameters
+are comma seperated, coordinates (0,0) denote the top left of the screen, increasing rightwards and downwards with no negative values
+
+For: executes a set of statements in a loop a specified number of times. For example: For (5){\n\tWriteLine \"This is the {i}st iteration of the inner loop\"\n\tPressKey \"A\"\n}
+Run: opens a .exe application or opens a file with its default application. Example 1: Run \"mspaint.exe\" Example 2: Run \"F:/folder/a_file_to_edit.docx\"
+FileCreate: creates a file at the specified Windows path. For example: FileCreate \"C:/Users/zaidl/Desktop/auto_test.txt\".
+Save: simulates the Ctrl+S keybind to save the current file. For example: Save.
+DirCreate: creates a new directory at the specified location. For example: DirCreate \"C:/Users/jarif/Documents/work_files/january_contracts_folder\".
+Move: moves a file to a new location, with options to rename or change file type. For example: Move \"C:/Users/Alex/Documents/data_1.txt\", \"C:/Users/Alex/Desktop/data_1.txt\".
+WriteLine: types out a string with the keyboard and adds a new line. For example: WriteLine \"This is a sample line that is typed out on screen.\".
+Write: types out a string with the keyboard. For example: Write \"This is a sample sentence that is typed out on screen.\".
+Del: deletes a specified file or folder. For example: Del \"D:/videos/games/old_clip.mp4\".
+Sleep: pauses execution for a specified amount of milliseconds. For example: Sleep 500.
+Click: simulates a left mouse click, optionally at specified coordinates. For example: Click 100, 200.
+PressKey: simulates a keyboard key press, supporting modifiers. For example: PressKey \"8\".
+Close: closes an application window, optionally by name. For example: Close \"Untitled\".
+SwitchWindow: switches the active window to an already opened application window. For example: SwitchWindow \"Home\".
+MouseToWord: moves the mouse cursor to the location of specified words on the screen. For example: MouseToWord \"Edit\", \"False\".
+MouseMove: moves the mouse cursor to specified screen coordinates. For example: MouseMove 748, 1000.
