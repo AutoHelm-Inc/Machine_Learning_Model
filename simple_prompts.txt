@@ -15,7 +15,7 @@ Del: deletes a specified file or folder. For example: Del \"D:/videos/games/old_
 Sleep: pauses execution for a specified amount of milliseconds. For example: Sleep 500
 Click: simulates a mouse click, by default a left \"L\" click where the cursor is. can optionally specify x,y coordinates of click, and do right \"R\" click too. Example 1: Click . Example 2: Click 100, 200, "R" 
 PressKey: simulates a keyboard key press, supporting modifiers. For example: PressKey \"8\"
-Close: closes the application window currently in focus, or any other open one if the window name is provided. Example 1: Close  . Example 2: Close \"Untitled\"
+Close: closes the application window currently in focus, or any other open one if the window title name is provided. Example 1: Close  . Example 2: Close \"Month View\"
 SwitchWindow: switches the currently active window to another open application window with the provided title. For example: SwitchWindow \"Home\"
 MouseToWord: moves the mouse cursor to the location of specified words on the screen. For example: MouseToWord \"Edit\", \"False\"
 MouseMove: moves the mouse cursor to specified screen coordinates. For example: MouseMove 748, 1000
